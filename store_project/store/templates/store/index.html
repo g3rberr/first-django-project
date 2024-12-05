@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,13 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    {% block title %}
+
     <title>Home</title>
+      
+    {% endblock title %}
+    
   </head>
   <body class="d-flex flex-column justify-content-between min-vh-100">
     <header class="fixed-top">
@@ -34,6 +41,8 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
+          
+          <i class="fas fa-hand-point-up    "></i>
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -86,214 +95,14 @@
     </header>
     <div class="container mt-5 pt-3">
       <main>
-        <div class="card-group">
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          <div class="card-group">
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="card-group">
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="product_detail/product_detail.html">
-              <img
-                src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-                class="card-img-top"
-                alt="..."
-              />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-
-              <ul class="category_list">
-                <li><a href="">Sport</a></li>
-                <li><a href="">Crossower</a></li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
+        
+        {% block content %}
+          ayo tf u doing here
+        {% endblock content %}
+          
       </main>
     </div>
-      <footer class="footer bg-dark text-info d-flex justify-content-center align-items-center"
-    >
+    <footer class="footer bg-dark text-info d-flex justify-content-center align-items-center">
       <span>Tel: +23-543-2334</span>
     </footer>
   </body>

@@ -1,0 +1,51 @@
+{% extends 'store/index.html' %} 
+
+
+
+{% block title %}
+  Product list
+
+{% endblock title %}
+  
+
+
+{% block content %}
+
+{% for products in product_list %}
+<div class="card-group">
+  
+  {% for product in products %}
+    
+  <div class="card">
+    <a href="{% url 'detail' %}">
+      <img
+        src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
+        class="card-img-top"
+        alt="..."
+      />
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">
+        {{ product.info | truncatewords:10 }}
+      </p>
+      <p class="card-text">
+        {{ product.price }}
+      </p>
+
+      <ul class="category_list">
+        <li><a href="">Sport</a></li>
+        <li><a href="">Crossower</a></li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+    
+</div>
+{% endfor %}
+
+{% endblock content %}
+
+
+
+
