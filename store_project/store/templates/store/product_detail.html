@@ -1,67 +1,92 @@
-{% extends 'store/index.html' %}
-
-
-
-
-{% block title %}
-  card description
-{% endblock title %}
-  
-
-
+{% extends 'store/index.html' %} 
+{% block title %} 
+{{ product.title }} 
+{% endblock title %} 
 
 {% block content %}
-<div class="container mt-5 pt-3">
-  <main>
-      <div class="card">
-        <img
-          src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eveniet? Suscipit unde numquam iure ipsam veniam qui facere corporis, iste accusamus dicta debitis consequuntur est recusandae optio inventore itaque earum officiis voluptate veritatis necessitatibus natus sapiente cum consequatur aliquam. At ipsa est eius laboriosam numquam perferendis minima ea dolorem maiores ducimus quibusdam veniam necessitatibus eaque eveniet sint dolorum magnam minus placeat, laudantium aspernatur eligendi itaque aperiam quos illo. Ratione ipsam omnis sapiente dolores. Officia quod asperiores consectetur atque minus accusantium hic eum voluptatibus esse perspiciatis tenetur cumque magnam vero, nobis doloribus possimus architecto distinctio nulla quis. Incidunt ipsum autem, modi eum pariatur consequatur corrupti alias vel quas delectus, possimus voluptate libero, illo laudantium. Ut voluptatum soluta aspernatur pariatur debitis quo est eveniet praesentium quibusdam delectus inventore ipsa, deserunt autem id voluptatem repellat, asperiores exercitationem libero assumenda dignissimos molestias accusamus. Fuga est aliquid exercitationem unde eaque distinctio laborum nihil vero, rerum voluptatum veritatis nulla beatae dolorem non, suscipit a deleniti debitis tenetur earum quaerat quia impedit quo! Itaque modi, officiis non adipisci consequuntur quis. Assumenda tenetur dolorem ipsam optio perferendis obcaecati maxime quas repellat neque reiciendis provident a beatae maiores, consequatur voluptate inventore vitae esse minus. Veniam perferendis architecto natus, aspernatur cumque odit quidem magni obcaecati quos eius ut animi dignissimos dolores velit. Consequuntur impedit nemo laudantium possimus laborum eveniet excepturi ipsa modi minus fugiat facere nisi, ducimus maxime molestiae iure. Alias ad est illo deserunt laudantium dignissimos et provident blanditiis aperiam? Accusamus distinctio, odio ratione ipsum odit vel veniam molestiae et velit non, laboriosam, placeat ab perspiciatis modi architecto quam? Quas dolorum illum vel, minima, sint omnis repellat minus dolor atque eligendi totam inventore voluptatibus. Dicta vero eaque voluptas odio distinctio deleniti repudiandae veritatis et molestiae cupiditate? Obcaecati atque adipisci impedit aperiam dolore non dolorem minus cum, aliquid magni iure!
-          </p>
-        <ul class="category_list">
-          <li><a href="">Sport</a></li>
-          <li><a href="">Crossower</a></li>
-        </ul>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Buy now 
-        </button>
-        </div>
-    </div>
+<div class="card">
+  <img
+    src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">{{ product.info }}</p>
+    <p class="card-text">{{ product.price }}</p>
+
+    <ul class="category_list">
+      <li><a href="">Sport</a></li>
+      <li><a href="">Crossower</a></li>
+    </ul>
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Buy now
+    </button>
+  </div>
 </div>
-</main>
-{% endblock content %}
-
-
-
-{% block modal %}
-      <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% endblock content %} {% block modal %}
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form method="post" action="https://www.youtube.com/@varlamov ">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" name="user_email" aria-describedby="emailHelp" required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="user_email"
+              aria-describedby="emailHelp"
+              required
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Your name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="user_name" required>    
+            <label for="exampleInputPassword1" class="form-label"
+              >Your name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="user_name"
+              required
+            />
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Check me out</label
+            >
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -69,7 +94,4 @@
     </div>
   </div>
 </div>
-
-  </div>
 {% endblock modal %}
-  
