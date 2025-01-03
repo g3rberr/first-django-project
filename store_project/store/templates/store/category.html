@@ -1,0 +1,24 @@
+{% extends 'store/index.html' %} 
+
+
+
+{% block title %}
+
+{{ category.name }}
+
+{% endblock title %}
+
+
+
+{% block content %}
+{% if category.products.all|length == 0 %}
+<h1>Товары категории "{{ category.name }}" на данный момент отсутствуют</h1>
+{% else %}
+<h1>Товары категории "{{ category.name }}:"</h1>
+{% include 'store/includes/card_group.html' %}  
+{% endif %}
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,11 @@
+{% extends 'store/index.html' %}
+
+
+
+{% block content %}
+<div style="margin-top: 60px; height: 100px; line-height: 100px; text-align: center;">
+    <h1>Здравствуйте {{ order_name }}!</h1>
+<h3>ваш заказ {{ order_product.title }} который стоит {{ order_product.price }} находится в обработке и скоро будет доставлен</h3>
+<h2>спасибо за покупку!</h2>
+</div>
+{% endblock content %}

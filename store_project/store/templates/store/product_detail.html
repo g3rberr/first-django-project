@@ -1,97 +1,58 @@
-{% extends 'store/index.html' %} 
-{% block title %} 
-{{ product.title }} 
-{% endblock title %} 
+{% extends 'store/index.html' %}
+
+{% block title %}
+{{ product.title }}
+{% endblock title %}
+
 
 {% block content %}
 <div class="card">
-  <img
-    src="https://jlr.scene7.com/is/image/jlr/L460_22MY_SV_001_GLHD_DX"
-    class="card-img-top"
-    alt="..."
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
-    <p class="card-text">{{ product.info }}</p>
-    <p class="card-text">{{ product.price }}</p>
+    {% include 'store/includes/image.html' %}
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.info }}</p>
+        <p class="card-text">Price: {{ product.price }}</p>
+        
+        <ul class="category_list">
+            {% for category in product.categories.all %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
 
-    <ul class="category_list">
-      <li><a href="">Sport</a></li>
-      <li><a href="">Crossower</a></li>
-    </ul>
-    <button
-      type="button"
-      class="btn btn-danger"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      Buy now
-    </button>
-  </div>
-</div>
-{% endblock content %} {% block modal %}
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="https://www.youtube.com/@varlamov ">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              name="user_email"
-              aria-describedby="emailHelp"
-              required
-            />
-            <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Your name</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              name="user_name"
-              required
-            />
-          </div>
-          <div class="mb-3 form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1"
-              >Check me out</label
-            >
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now!
+        </button>
     </div>
-  </div>
 </div>
-{% endblock modal %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{ product.title }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/save_order">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="user_name" class="form-label">You Name</label>
+                        <input type="text" class="form-control" name="user_name" id="user_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user_email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="user_email" aria-describedby="emailHelp"
+                            name="user_email" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                        </div>
+                    </div>
+                    <input type="hidden", name="product_id" value="{{ product.id }}" readonly>
+                    <button type="submit" class="btn btn-success">Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
