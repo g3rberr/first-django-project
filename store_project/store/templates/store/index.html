@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,21 +16,24 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/favicon.ico' %}"
+      type="image/x-icon"
+    />
 
     {% block title %}
 
     <title>Home</title>
-      
+
     {% endblock title %}
-    
   </head>
   <body class="d-flex flex-column justify-content-between min-vh-100">
     <header class="fixed-top">
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'product_list_url' %}">
-            <img src="{% static '/img/logo.jpg' %}" alt="Store" class="logo">
+            <img src="{% static '/img/logo.jpg' %}" alt="Store" class="logo" />
           </a>
           <button
             class="navbar-toggler"
@@ -42,15 +44,19 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-          
-          <i class="fas fa-hand-point-up "></i>
+            <i class="fas fa-hand-point-up"></i>
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'product_list_url' %}">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{% url 'product_list_url' %}"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -64,16 +70,21 @@
                   aria-expanded="false"
                 >
                   Categories
-              </a>
+                </a>
                 <ul class="dropdown-menu">
                   {% for category in categories %}
-                  <li><a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
                   <li>
-                    <hr class='dropdown-divider'>
+                    <a
+                      class="dropdown-item"
+                      href="{{ category.get_absolute_url }}"
+                      >{{ category.name }}</a
+                    >
                   </li>
-                  {% endfor %}  
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  {% endfor %}
                 </ul>
-                  
               </li>
             </ul>
             <form
@@ -99,14 +110,12 @@
     </header>
     <div class="container mt-5 pt-3">
       <main>
-        
-        {% block content %}
-          ayo tf u doing here
-        {% endblock content %}
-          
+        {% block content %} ayo tf u doing here {% endblock content %}
       </main>
     </div>
-    <footer class="footer bg-dark text-info d-flex justify-content-center align-items-center">
+    <footer
+      class="footer bg-dark text-info d-flex justify-content-center align-items-center"
+    >
       <span>Tel: +23-543-2334</span>
     </footer>
   </body>

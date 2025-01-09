@@ -15,6 +15,10 @@ class Product(models.Model):
     
     def get_absolute_url(self):
         return reverse('product_detail_url', kwargs={'pk': self.pk})
+    
+    
+    class Meta:
+        ordering = ['price']
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -39,3 +43,13 @@ class Order(models.Model):
     
     def __str__(self):
         return self.name
+    
+    
+class FilterBy(models.Model):
+    name = models.Charfield(max_length=100)
+    
+    def get_absolute_url(self):
+        return reverse(
+            ''
+        )
+    

@@ -1,7 +1,5 @@
 
-<div class="column-x">
-  {% for product in product_list %}
-  <div class="card" >
+  <div class="card">
     <a href="{{ product.get_absolute_url }}">
       {% include 'store/includes/image.html' %}
     </a>
@@ -22,5 +20,4 @@
       
     </div>
   </div>
-  {% endfor %} 
-</div>
+

@@ -15,7 +15,15 @@
 <h1>Товары категории "{{ category.name }}" на данный момент отсутствуют</h1>
 {% else %}
 <h1>Товары категории "{{ category.name }}:"</h1>
-{% include 'store/includes/card_group.html' %}  
+<div class="column-x">
+
+    {% for product in category.products.all %}
+
+    {% include 'store/includes/card_group.html' %}  
+
+    {% endfor %}
+
+</div>
 {% endif %}
 {% endblock content %}
 
