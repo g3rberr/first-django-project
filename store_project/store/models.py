@@ -44,12 +44,3 @@ class Order(models.Model):
     def __str__(self):
         return self.name
     
-    
-class FilterBy(models.Model):
-    name = models.Charfield(max_length=100)
-    
-    def get_absolute_url(self):
-        return reverse(
-            ''
-        )
-    
